@@ -1,387 +1,223 @@
-// Data Toko UMKM
-const storeData = {
-    'warung-bu-ani': {
-        name: 'Warung Bu Ani',
-        logo: '🍲',
-        desc: 'Warung Bu Ani menyajikan makanan tradisional khas desa dengan cita rasa autentik dan bumbu rempah pilihan. Sudah berdiri sejak 1995 dan menjadi favorit warga.',
-        menu: [
-            { name: 'Nasi Goreng Kampung', price: 'Rp 15.000', desc: 'Nasi goreng dengan bumbu tradisional' },
-            { name: 'Soto Ayam', price: 'Rp 12.000', desc: 'Soto ayam kuah bening segar' },
-            { name: 'Pecel Lele', price: 'Rp 18.000', desc: 'Lele goreng dengan sambal pecel' },
-            { name: 'Es Teh Manis', price: 'Rp 3.000', desc: 'Teh manis segar' }
-        ]
-    },
-    'toko-jajanan-manis': {
-        name: 'Toko Jajanan Manis',
-        logo: '🍰',
-        desc: 'Menyediakan aneka kue dan jajanan manis buatan rumahan dengan resep turun temurun. Semua dibuat fresh setiap hari tanpa pengawet.',
-        menu: [
-            { name: 'Kue Lapis', price: 'Rp 25.000', desc: 'Kue lapis legit original' },
-            { name: 'Brownies Kukus', price: 'Rp 20.000', desc: 'Brownies lembut kukus' },
-            { name: 'Klepon', price: 'Rp 10.000', desc: 'Klepon isi gula merah' },
-            { name: 'Onde-onde', price: 'Rp 12.000', desc: 'Onde-onde wijen kacang hijau' }
-        ]
-    },
-    'kedai-kopi-desa': {
-        name: 'Kedai Kopi Desa',
-        logo: '☕',
-        desc: 'Kedai kopi yang menggunakan biji kopi lokal pilihan dari kebun warga. Disangrai dengan teknik tradisional untuk menghasilkan aroma dan rasa terbaik.',
-        menu: [
-            { name: 'Kopi Tubruk', price: 'Rp 8.000', desc: 'Kopi hitam tradisional' },
-            { name: 'Kopi Susu', price: 'Rp 12.000', desc: 'Kopi dengan susu segar' },
-            { name: 'Cappuccino', price: 'Rp 15.000', desc: 'Kopi dengan foam susu' },
-            { name: 'Kopi Gula Aren', price: 'Rp 10.000', desc: 'Kopi dengan gula aren asli' }
-        ]
-    },
-    'toko-kerajinan': {
-        name: 'Toko Kerajinan Tangan',
-        logo: '🎨',
-        desc: 'Menjual berbagai kerajinan tangan unik hasil karya warga desa. Setiap produk dibuat dengan penuh cinta dan ketelitian tinggi.',
-        menu: [
-            { name: 'Tas Anyaman', price: 'Rp 75.000', desc: 'Tas anyaman bambu handmade' },
-            { name: 'Hiasan Dinding', price: 'Rp 50.000', desc: 'Hiasan dinding dari kayu' },
-            { name: 'Tempat Tisu', price: 'Rp 35.000', desc: 'Tempat tisu anyaman rotan' },
-            { name: 'Gelang Etnik', price: 'Rp 25.000', desc: 'Gelang dengan motif tradisional' }
-        ]
-    }
-};
+// Menu data
+const menuItems = [
+    { id: 1, name: 'Nasi Goreng Spesial', price: 25000, emoji: '🍛', description: 'Nasi goreng dengan bumbu rahasia dan telur' },
+    { id: 2, name: 'Mie Ayam Bakso', price: 20000, emoji: '🍜', description: 'Mie ayam dengan bakso sapi pilihan' },
+    { id: 3, name: 'Sate Ayam', price: 30000, emoji: '�串', description: '10 tusuk sate ayam dengan bumbu kacang' },
+    { id: 4, name: 'Gado-Gado', price: 18000, emoji: '🥗', description: 'Sayuran segar dengan bumbu kacang' },
+    { id: 5, name: 'Soto Ayam', price: 22000, emoji: '🍲', description: 'Soto ayam kuah kuning dengan nasi' },
+    { id: 6, name: 'Rendang', price: 35000, emoji: '🍖', description: 'Rendang daging sapi dengan nasi' },
+    { id: 7, name: 'Pecel Lele', price: 23000, emoji: '🐟', description: 'Lele goreng dengan sambal pecel' },
+    { id: 8, name: 'Es Teh Manis', price: 5000, emoji: '🧋', description: 'Teh manis dingin segar' },
+];
 
-// Keranjang belanja
+// Cart array
 let cart = [];
 
-// Fungsi untuk menampilkan halaman dengan animasi
-function showPage(page) {
-    // Dapatkan halaman yang sedang aktif
-    const pages = ['homePage', 'storePage', 'storeDetail', 'contactPage', 'cartPage'];
-    let currentPage = null;
+// Show specific page
+function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    updateCartCount();
+}
+
+// Login form handler
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
     
-    pages.forEach(pageId => {
-        const pageElement = document.getElementById(pageId);
-        if (pageElement.style.display === 'block') {
-            currentPage = pageElement;
-        }
-    });
-    
-    // Jika ada halaman aktif, fade out dulu
-    if (currentPage) {
-        currentPage.classList.add('fade-out');
-        
+    if (username && password) {
+        showPage('homePage');
+        // Add welcome animation
         setTimeout(() => {
-            // Sembunyikan semua halaman
-            pages.forEach(pageId => {
-                const pageElement = document.getElementById(pageId);
-                pageElement.style.display = 'none';
-                pageElement.classList.remove('fade-out');
-            });
-            
-            // Tampilkan halaman yang dipilih dengan animasi
-            if (page === 'home') {
-                document.getElementById('homePage').style.display = 'block';
-            } else if (page === 'store') {
-                document.getElementById('storePage').style.display = 'block';
-            } else if (page === 'contact') {
-                document.getElementById('contactPage').style.display = 'block';
-            } else if (page === 'cart') {
-                document.getElementById('cartPage').style.display = 'block';
-                renderCart();
-            }
-            
-            // Scroll ke atas dengan smooth behavior
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 400);
-    } else {
-        // Jika tidak ada halaman aktif, langsung tampilkan
-        pages.forEach(pageId => {
-            document.getElementById(pageId).style.display = 'none';
-        });
-        
-        if (page === 'home') {
-            document.getElementById('homePage').style.display = 'block';
-        } else if (page === 'store') {
-            document.getElementById('storePage').style.display = 'block';
-        } else if (page === 'contact') {
-            document.getElementById('contactPage').style.display = 'block';
-        } else if (page === 'cart') {
-            document.getElementById('cartPage').style.display = 'block';
-            renderCart();
-        }
-        
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+            alert('Selamat datang di UMKM Desa, ' + username + '! 🎉');
+        }, 300);
     }
+});
+
+// Generate menu items
+function generateMenu() {
+    const menuContainer = document.getElementById('menuContainer');
+    menuContainer.innerHTML = '';
+    
+    menuItems.forEach(item => {
+        const menuDiv = document.createElement('div');
+        menuDiv.className = 'menu-item';
+        menuDiv.innerHTML = `
+            <div class="menu-image">${item.emoji}</div>
+            <div class="menu-info">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <div class="menu-price">Rp ${item.price.toLocaleString('id-ID')}</div>
+                <button class="btn-add" onclick="addToCart(${item.id})">Tambah ke Keranjang</button>
+            </div>
+        `;
+        menuContainer.appendChild(menuDiv);
+    });
 }
 
-// Fungsi untuk menampilkan detail toko dengan animasi
-function showStoreDetail(storeId) {
-    const store = storeData[storeId];
-    const storePage = document.getElementById('storePage');
-    const detailPage = document.getElementById('storeDetail');
-    
-    // Fade out store page
-    storePage.classList.add('fade-out');
-    
-    setTimeout(() => {
-        // Sembunyikan halaman toko
-        storePage.style.display = 'none';
-        storePage.classList.remove('fade-out');
-        
-        // Tampilkan halaman detail
-        detailPage.style.display = 'block';
-        
-        // Update informasi toko
-        document.getElementById('detailLogo').textContent = store.logo;
-        document.getElementById('detailName').textContent = store.name;
-        document.getElementById('detailDesc').textContent = store.desc;
-        
-        // Generate menu items
-        const menuGrid = document.getElementById('menuGrid');
-        menuGrid.innerHTML = '';
-        
-        store.menu.forEach((item, index) => {
-            const menuItem = document.createElement('div');
-            menuItem.className = 'menu-item';
-            menuItem.innerHTML = `
-                <h4>${item.name}</h4>
-                <p>${item.desc}</p>
-                <div class="price">${item.price}</div>
-                <button class="order-btn" onclick="orderItem('${item.name}', '${item.price}', '${store.name}')">Order</button>
-            `;
-            menuGrid.appendChild(menuItem);
-        });
-        
-        // Scroll ke atas dengan smooth behavior
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 400);
-}
-
-// Fungsi untuk order item dengan animasi
-function orderItem(itemName, price, storeName) {
-    const button = event.target;
-    const originalText = button.textContent;
-    
-    // Animasi button loading
-    button.textContent = '⏳ Memproses...';
-    button.disabled = true;
-    button.style.opacity = '0.7';
-    
-    setTimeout(() => {
-        button.textContent = '✓ Ditambahkan!';
-        button.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-        
-        // Tambahkan ke keranjang
-        addToCart(itemName, price, storeName);
-        
-        setTimeout(() => {
-            // Reset button
-            button.textContent = originalText;
-            button.disabled = false;
-            button.style.opacity = '1';
-            button.style.background = 'linear-gradient(135deg, #FF8C42, #FF6B35)';
-        }, 800);
-    }, 600);
-}
-
-// Fungsi untuk menambahkan item ke keranjang
-function addToCart(itemName, price, storeName) {
-    // Cek apakah item sudah ada di keranjang
-    const existingItem = cart.find(item => 
-        item.name === itemName && item.store === storeName
-    );
+// Add item to cart
+function addToCart(itemId) {
+    const item = menuItems.find(m => m.id === itemId);
+    const existingItem = cart.find(c => c.id === itemId);
     
     if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity++;
     } else {
-        cart.push({
-            name: itemName,
-            price: price,
-            store: storeName,
-            quantity: 1,
-            desc: getItemDescription(itemName, storeName)
-        });
+        cart.push({ ...item, quantity: 1 });
     }
     
-    updateCartBadge();
+    updateCartCount();
     
-    // Notifikasi
-    showNotification(`${itemName} ditambahkan ke keranjang!`);
+    // Show feedback animation
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = '✓ Ditambahkan!';
+    btn.style.background = '#4CAF50';
+    setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+    }, 1000);
 }
 
-// Fungsi untuk mendapatkan deskripsi item
-function getItemDescription(itemName, storeName) {
-    for (let storeId in storeData) {
-        if (storeData[storeId].name === storeName) {
-            const item = storeData[storeId].menu.find(m => m.name === itemName);
-            return item ? item.desc : '';
-        }
-    }
-    return '';
+// Update cart count badges
+function updateCartCount() {
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cartCount').textContent = count;
+    document.getElementById('cartCount2').textContent = count;
+    document.getElementById('cartCount3').textContent = count;
+    document.getElementById('cartCount4').textContent = count;
 }
 
-// Fungsi untuk update badge keranjang
-function updateCartBadge() {
-    const badge = document.getElementById('cartBadge');
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    badge.textContent = totalItems;
-    
-    // Animasi bounce
-    badge.classList.remove('updated');
-    void badge.offsetWidth; // Trigger reflow
-    badge.classList.add('updated');
-}
-
-// Fungsi untuk render keranjang
-function renderCart() {
-    const cartEmpty = document.getElementById('cartEmpty');
-    const cartItems = document.getElementById('cartItems');
-    const cartSummary = document.getElementById('cartSummary');
+// Display cart items
+function displayCart() {
+    const cartItemsContainer = document.getElementById('cartItems');
     
     if (cart.length === 0) {
-        cartEmpty.style.display = 'block';
-        cartItems.innerHTML = '';
-        cartSummary.style.display = 'none';
+        cartItemsContainer.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">Keranjang Anda masih kosong</p>';
+        document.getElementById('totalPrice').textContent = 'Rp 0';
         return;
     }
     
-    cartEmpty.style.display = 'none';
-    cartSummary.style.display = 'block';
-    
-    // Render items
-    cartItems.innerHTML = '';
-    cart.forEach((item, index) => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <div class="cart-item-info">
-                <div class="cart-item-store">${item.store}</div>
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-desc">${item.desc}</div>
-            </div>
-            <div class="cart-item-price">${item.price}</div>
-            <div class="cart-item-actions">
-                <div class="qty-control">
-                    <button class="qty-btn" onclick="decreaseQuantity(${index})">-</button>
-                    <span class="qty-display">${item.quantity}</span>
-                    <button class="qty-btn" onclick="increaseQuantity(${index})">+</button>
-                </div>
-                <button class="btn-remove" onclick="removeFromCart(${index})">Hapus</button>
-            </div>
-        `;
-        cartItems.appendChild(cartItem);
-    });
-    
-    // Update summary
-    updateCartSummary();
-}
-
-// Fungsi untuk update summary
-function updateCartSummary() {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item) => {
-        const price = parseInt(item.price.replace(/[^0-9]/g, ''));
-        return sum + (price * item.quantity);
-    }, 0);
-    
-    document.getElementById('totalItems').textContent = totalItems;
-    document.getElementById('totalPrice').textContent = `Rp ${totalPrice.toLocaleString('id-ID')}`;
-}
-
-// Fungsi untuk increase quantity
-function increaseQuantity(index) {
-    cart[index].quantity += 1;
-    updateCartBadge();
-    renderCart();
-}
-
-// Fungsi untuk decrease quantity
-function decreaseQuantity(index) {
-    if (cart[index].quantity > 1) {
-        cart[index].quantity -= 1;
-        updateCartBadge();
-        renderCart();
-    }
-}
-
-// Fungsi untuk remove item dari cart
-function removeFromCart(index) {
-    const itemName = cart[index].name;
-    cart.splice(index, 1);
-    updateCartBadge();
-    renderCart();
-    showNotification(`${itemName} dihapus dari keranjang`);
-}
-
-// Fungsi untuk clear cart
-function clearCart() {
-    if (confirm('Apakah Anda yakin ingin mengosongkan keranjang?')) {
-        cart = [];
-        updateCartBadge();
-        renderCart();
-        showNotification('Keranjang telah dikosongkan');
-    }
-}
-
-// Fungsi untuk checkout
-function checkout() {
-    if (cart.length === 0) return;
-    
-    let message = '🛒 *Pesanan MangDeliv*\n\n';
+    cartItemsContainer.innerHTML = '';
     let total = 0;
     
     cart.forEach(item => {
-        const price = parseInt(item.price.replace(/[^0-9]/g, ''));
-        const subtotal = price * item.quantity;
-        total += subtotal;
-        
-        message += `📦 *${item.name}*\n`;
-        message += `   Toko: ${item.store}\n`;
-        message += `   Jumlah: ${item.quantity}x\n`;
-        message += `   Subtotal: Rp ${subtotal.toLocaleString('id-ID')}\n\n`;
+        total += item.price * item.quantity;
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.className = 'cart-item';
+        cartItemDiv.innerHTML = `
+            <div class="cart-item-info">
+                <h4>${item.emoji} ${item.name}</h4>
+                <p>Rp ${item.price.toLocaleString('id-ID')}</p>
+            </div>
+            <div class="cart-item-controls">
+                <button class="qty-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                <span style="font-weight: bold; min-width: 30px; text-align: center;">${item.quantity}</span>
+                <button class="qty-btn" onclick="increaseQuantity(${item.id})">+</button>
+                <span style="margin-left: 20px; font-weight: bold; color: #ff6b00;">Rp ${(item.price * item.quantity).toLocaleString('id-ID')}</span>
+            </div>
+        `;
+        cartItemsContainer.appendChild(cartItemDiv);
     });
     
-    message += `━━━━━━━━━━━━━━━\n`;
-    message += `💰 *Total: Rp ${total.toLocaleString('id-ID')}*\n\n`;
-    message += `━━━━━━━━━━━━━━━\n`;
-    message += 'Dengan Penerima : <Tulis Nama Anda disini>';
-    message += 'Alamat : <Tulis alamat anda disini>';
-    message += `━━━━━━━━━━━━━━━\n`;
-    message += `Mohon konfirmasi pesanan ini. Terima kasih! 🙏`;
-    
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/62821129210772?text=${encodedMessage}`;
-    
-    window.open(whatsappUrl, '_blank');
+    document.getElementById('totalPrice').textContent = 'Rp ' + total.toLocaleString('id-ID');
 }
 
-// Fungsi untuk show notification
-function showNotification(message) {
-    // Buat elemen notifikasi
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 90px;
-        right: 20px;
-        background: linear-gradient(135deg, #22c55e, #16a34a);
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        z-index: 10000;
-        animation: slideInRight 0.3s ease-out;
-        font-weight: 500;
-    `;
-    notification.textContent = message;
+// Increase item quantity
+function increaseQuantity(itemId) {
+    const item = cart.find(c => c.id === itemId);
+    if (item) {
+        item.quantity++;
+        displayCart();
+        updateCartCount();
+    }
+}
+
+// Decrease item quantity
+function decreaseQuantity(itemId) {
+    const itemIndex = cart.findIndex(c => c.id === itemId);
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity--;
+        if (cart[itemIndex].quantity === 0) {
+            cart.splice(itemIndex, 1);
+        }
+        displayCart();
+        updateCartCount();
+    }
+}
+
+// Checkout and start tracking
+function checkout() {
+    if (cart.length === 0) {
+        alert('Keranjang Anda masih kosong!');
+        return;
+    }
     
-    document.body.appendChild(notification);
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const confirmation = confirm(`Total pembayaran: Rp ${total.toLocaleString('id-ID')}\n\nLanjutkan checkout?`);
     
-    setTimeout(() => {
-        notification.style.animation = 'fadeOutDown 0.3s ease-in';
+    if (confirmation) {
+        document.getElementById('trackingSection').style.display = 'block';
+        startTracking();
+        
+        // Scroll to tracking section
         setTimeout(() => {
-            document.body.removeChild(notification);
+            document.getElementById('trackingSection').scrollIntoView({ behavior: 'smooth' });
         }, 300);
-    }, 2000);
+    }
 }
 
-// Smooth scroll untuk navigasi
-document.addEventListener('DOMContentLoaded', function() {
-    // Set halaman home sebagai default
-    showPage('home');
+// Driver tracking animation
+function startTracking() {
+    const driverMarker = document.getElementById('driverMarker');
+    let position = 10;
+    let time = 15;
+    
+    const trackingInterval = setInterval(() => {
+        position += 1.5;
+        time -= 0.3;
+        
+        driverMarker.style.left = position + '%';
+        driverMarker.style.top = (20 + Math.sin(position / 10) * 15) + '%';
+        
+        document.getElementById('estimatedTime').textContent = Math.max(0, Math.round(time)) + ' menit';
+        document.getElementById('trackingStatus').textContent = position < 80 ? 'Driver sedang dalam perjalanan...' : 'Driver hampir sampai! 🎉';
+        
+        if (position >= 85) {
+            clearInterval(trackingInterval);
+            alert('Pesanan Anda telah tiba! Selamat menikmati! 🎉');
+            cart = [];
+            displayCart();
+            updateCartCount();
+            document.getElementById('trackingSection').style.display = 'none';
+        }
+    }, 200);
+}
+
+// Contact form handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda. 📧');
+    this.reset();
+});
+
+// Monitor cart page to update display
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.target.id === 'cartPage' && mutation.target.classList.contains('active')) {
+            displayCart();
+        }
+    });
+});
+
+// Observe all pages
+document.querySelectorAll('.page').forEach(page => {
+    observer.observe(page, { attributes: true, attributeFilter: ['class'] });
+});
+
+// Initialize menu on page load
+window.addEventListener('DOMContentLoaded', function() {
+    generateMenu();
 });
