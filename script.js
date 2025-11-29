@@ -58,8 +58,8 @@ const storeData = {
             { name: 'Sate Sapi (10 Tusuk)', price: 'Rp 30.000', desc: '-' },
             { name: 'Ayam Goreng Kampung', price: 'Rp 15.000', desc: '-' },
             { name: 'Bakakak', price: 'Rp 50.000', desc: '-' },
-            { name: 'Paket Nasi Tumpeng', price: 'Rp 200.000 - 300.000', desc: '(Harga menyesuaikan dengan request topping)' },
-            { name: 'Paket Nasi Liwet ', price: 'Rp 100.000 - 300.000', desc: '(Harga menyesuaikan dengan request topping)' }
+            { name: 'Paket Nasi Tumpeng', price: 'Rp 300.000', desc: '(Harga menyesuaikan dengan request topping)' },
+            { name: 'Paket Nasi Liwet ', price: 'Rp 250.000', desc: '(Harga menyesuaikan dengan request topping)' }
         ]
     },
     'pawon-bu-mey': {
