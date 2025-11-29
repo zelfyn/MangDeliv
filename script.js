@@ -368,8 +368,8 @@ function checkout() {
     message += `━━━━━━━━━━━━━━━\n`;
     message += `💰 *Total: Rp ${total.toLocaleString('id-ID')}*\n\n`;
     message += `━━━━━━━━━━━━━━━\n`;
-    message += '  Dengan Penerima : <Tulis Nama Anda disini>  \n';
-    message += '  Alamat : <Tulis alamat anda disini>  \n';
+    message += '  Dengan Penerima : <Tulis Nama Anda disini>\n';
+    message += '  Alamat : <Tulis alamat anda disini>\n';
     message += `━━━━━━━━━━━━━━━\n`;
     message += `Mohon konfirmasi pesanan ini. Terima kasih! 🙏`;
     
