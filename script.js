@@ -1,47 +1,68 @@
 // Data Toko UMKM
 const storeData = {
-    'warung-bu-ani': {
-        name: 'Warung Bu Ani',
+    'bubur-bandung-mah-nci': {
+        name: 'Bubur Bandung Mah Nci',
         logo: '🍲',
-        desc: 'Warung Bu Ani menyajikan makanan tradisional khas desa dengan cita rasa autentik dan bumbu rempah pilihan. Sudah berdiri sejak 1995 dan menjadi favorit warga.',
+        desc: 'Makanan',
         menu: [
-            { name: 'Nasi Goreng Kampung', price: 'Rp 15.000', desc: 'Nasi goreng dengan bumbu tradisional' },
-            { name: 'Soto Ayam', price: 'Rp 12.000', desc: 'Soto ayam kuah bening segar' },
-            { name: 'Pecel Lele', price: 'Rp 18.000', desc: 'Lele goreng dengan sambal pecel' },
-            { name: 'Es Teh Manis', price: 'Rp 3.000', desc: 'Teh manis segar' }
+            { name: 'Polos', price: 'Rp 6.000', desc: 'Bubur Bandung Polos' },
+            { name: 'Biasa', price: 'Rp 10.000', desc: 'Bubur Bandung Biasa' },
+            { name: 'Ayam Ati Ampela', price: 'Rp 12.000', desc: 'Bubur Bandung dengan tambahan Ayam Ati Ampela' },
+            { name: 'Ayam Telur', price: 'Rp 12.000', desc: 'Bubur Bandung dengan tambahan Ayam Telur' },
+            { name: 'Special', price: 'Rp 14.000', desc: 'Bubur Bandung dengan topping special' }
         ]
     },
-    'toko-jajanan-manis': {
-        name: 'Toko Jajanan Manis',
-        logo: '🍰',
-        desc: 'Menyediakan aneka kue dan jajanan manis buatan rumahan dengan resep turun temurun. Semua dibuat fresh setiap hari tanpa pengawet.',
+    'cfc': {
+        name: 'CFC (Chicken Farhan Conggeang)',
+        logo: '🍗',
+        desc: 'Makanan',
         menu: [
-            { name: 'Kue Lapis', price: 'Rp 25.000', desc: 'Kue lapis legit original' },
-            { name: 'Brownies Kukus', price: 'Rp 20.000', desc: 'Brownies lembut kukus' },
-            { name: 'Klepon', price: 'Rp 10.000', desc: 'Klepon isi gula merah' },
-            { name: 'Onde-onde', price: 'Rp 12.000', desc: 'Onde-onde wijen kacang hijau' }
+            { name: 'Original', price: 'Rp 8.000', desc: 'Ayam Original' },
+            { name: 'Geprek', price: 'Rp 12.000', desc: 'Ayam Geprek' },
+            { name: 'Original + Nasi ', price: 'Rp 12.000', desc: 'Ayam original dengan tambahan nasi' },
+            { name: 'Geprek + Nasi', price: 'Rp 15.000', desc: 'Ayam geprek dengan tambahan nasi' }
         ]
     },
-    'kedai-kopi-desa': {
-        name: 'Kedai Kopi Desa',
-        logo: '☕',
-        desc: 'Kedai kopi yang menggunakan biji kopi lokal pilihan dari kebun warga. Disangrai dengan teknik tradisional untuk menghasilkan aroma dan rasa terbaik.',
+    'martabak-telur-alun-alun': {
+        name: 'Martabak Telur Alun Alun',
+        logo: '🧇',
+        desc: 'Makanan          ',
         menu: [
-            { name: 'Kopi Tubruk', price: 'Rp 8.000', desc: 'Kopi hitam tradisional' },
-            { name: 'Kopi Susu', price: 'Rp 12.000', desc: 'Kopi dengan susu segar' },
-            { name: 'Cappuccino', price: 'Rp 15.000', desc: 'Kopi dengan foam susu' },
-            { name: 'Kopi Gula Aren', price: 'Rp 10.000', desc: 'Kopi dengan gula aren asli' }
+            { name: 'Ayam (Biasa + 2 telur)', price: 'Rp 25.000', desc: 'Martabak Ayam dengan topping biasa + 2 telur' },
+            { name: 'Ayam (Special + 3 telur )', price: 'Rp 30.000', desc: 'Martabak Ayam dengan topping special + 3 telur' },
+            { name: 'Ayam (Istimewa + 4 telur )', price: 'Rp 35.000', desc: 'Martabak Ayam dengan topping istimewa + 4 telur' },
+            { name: 'Sapi (Biasa + 2 telur)', price: 'Rp 30.000', desc: 'Martabak Sapi dengan topping biasa + 2 telur' },
+            { name: 'Sapi (Special + 3 telur )', price: 'Rp 35.000', desc: 'Martabak Sapi dengan topping special + 3 telur' },
+            { name: 'Sapi (Istimewa + 4 telur )', price: 'Rp 40.000', desc: 'Martabak SAPI dengan topping istimewa + 4 telur' },
         ]
     },
-    'toko-kerajinan': {
-        name: 'Toko Kerajinan Tangan',
-        logo: '🎨',
-        desc: 'Menjual berbagai kerajinan tangan unik hasil karya warga desa. Setiap produk dibuat dengan penuh cinta dan ketelitian tinggi.',
+    'gurih-gurih-nyoyyy': {
+        name: 'Gurih Gurih Nyoyyy',
+        logo: '🍚🥤',
+        desc: 'Makanan & Minuman',
         menu: [
-            { name: 'Tas Anyaman', price: 'Rp 75.000', desc: 'Tas anyaman bambu handmade' },
-            { name: 'Hiasan Dinding', price: 'Rp 50.000', desc: 'Hiasan dinding dari kayu' },
-            { name: 'Tempat Tisu', price: 'Rp 35.000', desc: 'Tempat tisu anyaman rotan' },
-            { name: 'Gelang Etnik', price: 'Rp 25.000', desc: 'Gelang dengan motif tradisional' }
+            { name: 'Batagor Kuah', price: 'Rp 5.000', desc: 'Batagor dengan kuah' },
+            { name: 'Batagor Kering', price: 'Rp 5.000', desc: 'Batagor tanpa kuah' },
+            { name: 'Es Campur', price: 'Rp 5.000', desc: 'Es buah campur' }
+        ]
+    },
+    'warung-the-elin': {
+        name: 'Warung the Elin',
+        logo: '🍛',
+        desc: 'Makanan',
+        menu: [
+            { name: 'Paket Nasi Tumpeng', price: 'Rp 300.000', desc: '-' },
+            { name: 'Paket Nasi Liwet ', price: 'Rp 250.000', desc: '-' }
+        ]
+    },
+    'pawon-bu-mey': {
+        name: 'Pawon Bu Mey',
+        logo: '🍢',
+        desc: 'Makanan',
+        menu: [
+            { name: 'Dimsum Mentai', price: 'Rp 10.000', desc: 'Dimsum dengan saos mentai' },
+            { name: 'Tahu Baso', price: 'Rp 10.000', desc: 'Tahu bakso' },
+            { name: 'Baso Bakar', price: 'Rp 10.000', desc: 'Bakso yang dibakar' }
         ]
     }
 };
@@ -340,8 +361,8 @@ function checkout() {
     message += `━━━━━━━━━━━━━━━\n`;
     message += `💰 *Total: Rp ${total.toLocaleString('id-ID')}*\n\n`;
     message += `━━━━━━━━━━━━━━━\n`;
-    message += 'Dengan Penerima : <Tulis Nama Anda disini>';
-    message += 'Alamat : <Tulis alamat anda disini>';
+    message += '  Dengan Penerima : <Tulis Nama Anda disini>  ';
+    message += '  Alamat : <Tulis alamat anda disini>  ';
     message += `━━━━━━━━━━━━━━━\n`;
     message += `Mohon konfirmasi pesanan ini. Terima kasih! 🙏`;
     
