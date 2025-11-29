@@ -46,13 +46,20 @@ const storeData = {
             { name: 'Es Campur', price: 'Rp 5.000', desc: 'Es buah campur' }
         ]
     },
-    'warung-the-elin': {
-        name: 'Warung the Elin',
+    'warung-teh-elin': {
+        name: 'Warung Nasi Teh Elin',
         logo: '🍛',
         desc: 'Makanan',
         menu: [
-            { name: 'Paket Nasi Tumpeng', price: 'Rp 300.000', desc: '-' },
-            { name: 'Paket Nasi Liwet ', price: 'Rp 250.000', desc: '-' }
+            { name: 'Ayam Bakar', price: 'Rp 15.000', desc: '-' },
+            { name: 'Ikan Bakar Nila', price: 'Rp 25.000', desc: '-' },
+            { name: 'SOP Iga Sapi', price: 'Rp 15.000', desc: '-' },
+            { name: 'Sate Ayam (10 Tusuk)', price: 'Rp 15.000', desc: '-' },
+            { name: 'Sate Sapi (10 Tusuk)', price: 'Rp 30.000', desc: '-' },
+            { name: 'Ayam Goreng Kampung', price: 'Rp 15.000', desc: '-' },
+            { name: 'Bakakak', price: 'Rp 50.000', desc: '-' },
+            { name: 'Paket Nasi Tumpeng', price: 'Rp 200.000 - 300.000', desc: '(Harga menyesuaikan dengan request topping)' },
+            { name: 'Paket Nasi Liwet ', price: 'Rp 100.000 - 300.000', desc: '(Harga menyesuaikan dengan request topping)' }
         ]
     },
     'pawon-bu-mey': {
