@@ -363,11 +363,11 @@ function checkout() {
     message += `   Subtotal: Rp ${subtotal.toLocaleString("id-ID")}\n\n`;
   });
 
-  message += `━━━━━━━━━━━━━━━\n`;
+  message += `━━━━━━━━━━━━━━━\n\n`;
   message += `💰 *Total: Rp ${total.toLocaleString("id-ID")}*\n\n`;
-  message += `━━━━━━━━━━━━━━━\n`;
-  message += "  Dengan Penerima : <Tulis Nama Anda disini>\n";
-  message += "  Alamat : <Tulis alamat anda disini>\n";
+  message += `━━━━━━━━━━━━━━━\n\n`;
+  message += "  Dengan Penerima : <Tulis Nama Anda disini>\n\n";
+  message += "  Alamat : <Tulis alamat anda disini>\n\n";
   message += `━━━━━━━━━━━━━━━\n`;
   message += `Mohon konfirmasi pesanan ini. Terima kasih! 🙏`;
 
