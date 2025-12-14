@@ -173,8 +173,7 @@ nav {
 }
 
 .hero {
-    margin-top: 70px;
-    min-height: 500px;
+    height: 100vh;
     background-image: url(pics/bg-home.jpg);
     display: flex;
     align-items: center;
@@ -190,7 +189,7 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 140, 66, 0.7) 0%, rgba(139, 69, 19, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(255, 140, 66, 0.6) 0%, rgba(139, 69, 19, 0.5) 100%);
 }
 
 .hero-content {
@@ -199,33 +198,43 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    text-align: left;
+    text-align: center;
     padding: 2rem;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
     font-family: "Gloria Hallelujah", cursive;
+    background-color: rgba(116, 61, 27, 0.15);
+    border: 1px solid #ffffff20;
+    backdrop-filter: blur(16px) saturate(120%);
+    border-radius: 16px;
+    transition: .5s ease-in-out;
+}
+
+.hero-content:hover {
+    background-color: rgba(116, 61, 27, 0.7);
+    width: 64%;
+    transition: .5s ease-in-out;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
     line-height: 1.3;
     font-weight: 700;
     color: white;
-    max-width: 900px;
 }
 
 .hero-subtitle {
     font-size: 1.4rem;
-    margin-top: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     opacity: 0.95;
     font-weight: 400;
 }
 
 .features {
+    position: relative;
     padding: 4rem 2rem;
     background-color: #fff;
+    height: auto;
 }
 
 .features h2 {
@@ -268,6 +277,64 @@ nav {
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+
+.tutorial {
+    background-color: rgba(255, 160, 52, 0.767);
+    padding: 4rem 2rem; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto; 
+}
+
+.tutorial h2 {
+    margin: 40px 10px 40px 10px;
+    font-size: 30px;
+}
+
+.tutor-container {
+    display: flex;
+    align-items: flex; 
+    gap: 1.5rem; 
+    margin-bottom: 2rem; 
+    width: 100%;
+    max-width: 800px; 
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.tutor-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tutor-container h3 {
+    background-color: #8B4513;  
+    color: white;
+    font-size: 1.8rem;
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; 
+}
+
+.txt-tutor {
+    width: 100%; 
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    background-color: transparent; 
+}
+
+.txt-tutor span {
+    font-weight: bold;
 }
 
 /* Store Page */
@@ -769,7 +836,10 @@ nav {
     .nav-links {
         gap: 1rem;
     }
-    
+    .hero-content:hover {
+        width: 100%;
+    }    
+
     .hero h1 {
         font-size: 2rem;
     }
@@ -788,6 +858,28 @@ nav {
 
     nav {
         padding: 1rem;
+    }
+
+    .features {
+        height: auto;
+    }
+
+    .tutorial h2 {
+        font-size: 2rem;
+    }
+    
+    .tutor-container {
+        flex-direction: column; 
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .tutor-container h3 {
+        margin: 0 auto 1rem auto; 
+    }
+
+    .txt-tutor {
+        font-size: 1rem;
     }
 }
 

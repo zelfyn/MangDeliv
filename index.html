@@ -1,185 +1,215 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MangDeliv - Platform UMKM Desa</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <!-- Navigation Bar -->
     <nav id="navbar">
-      <div class="logo"><span>Mang</span>Deliv</div>
-      <ul class="nav-links">
-        <li><a href="#" onclick="showPage('home')">Home</a></li>
-        <li><a href="#" onclick="showPage('store')">Toko</a></li>
-        <li>
-          <a href="#" onclick="showPage('cart')">Pesanan <span class="cart-badge" id="cartBadge">0</span></a>
-        </li>
-        <li><a href="#" onclick="showPage('contact')">Kontak</a></li>
-      </ul>
+        <div class="logo"><span>Mang</span>Deliv</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('store')">Toko</a></li>
+            <li><a href="#" onclick="showPage('cart')">Pesanan <span class="cart-badge" id="cartBadge">0</span></a></li>
+            <li><a href="#" onclick="showPage('contact')">Kontak</a></li>
+        </ul>
     </nav>
 
     <!-- Home Page -->
-    <div class="home-page" id="homePage" style="display: block">
-      <section class="hero">
-        <div class="hero-content">
-          <h1>Selamat datang di MangDeliv,<br />layanan pengiriman cepat ke tangan pelanggan</h1>
-          <p class="hero-subtitle">Mendukung produk lokal, memperkuat ekonomi desa</p>
-        </div>
-      </section>
+    <div class="home-page" id="homePage" style="display: block;">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Selamat datang di MangDeliv,</h1>
+                <p class="hero-subtitle">layanan pengiriman cepat dan siap menjangkau daerah pelosok</p>
+            </div>
+        </section>
 
-      <section class="features">
-        <h2>Fitur Layanan Kami</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <h3>🚀 Pengiriman Cepat</h3>
-            <p>Layanan pengiriman express yang memastikan produk sampai dalam waktu singkat ke tangan pelanggan</p>
-          </div>
-          <div class="feature-card">
-            <h3>🏪 UMKM Lokal Terpercaya</h3>
-            <p>Menghubungkan Anda dengan UMKM lokal terbaik yang menyediakan produk berkualitas</p>
-          </div>
-          <div class="feature-card">
-            <h3>💳 Pembayaran Mudah</h3>
-            <p>Berbagai metode pembayaran yang aman dan mudah untuk kenyamanan Anda</p>
-          </div>
-          <div class="feature-card">
-            <h3>📱 Pemesanan Online</h3>
-            <p>Pesan produk favorit Anda kapan saja dan dimana saja melalui platform kami</p>
-          </div>
-          <div class="feature-card">
-            <h3>🎯 Customer support</h3>
-            <p>Membantu pengguna jika ada pertanyaan, komplain, kebutuhan bantuan order/pembayaran/pengiriman</p>
-          </div>
-          <div class="feature-card">
-            <h3>🌟 Produk Berkualitas</h3>
-            <p>Semua produk telah melewati kurasi untuk menjamin kualitas terbaik</p>
-          </div>
-        </div>
-      </section>
+        <section class="features">
+            <h2>Fitur Layanan Kami</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🚀 Pengiriman Cepat</h3>
+                    <p>Layanan pengiriman express yang memastikan produk sampai dalam waktu singkat ke tangan pelanggan</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏪 UMKM Lokal Terpercaya</h3>
+                    <p>Menghubungkan Anda dengan UMKM lokal terbaik yang menyediakan produk berkualitas</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💳 Pembayaran Mudah</h3>
+                    <p>Berbagai metode pembayaran yang aman dan mudah untuk kenyamanan Anda</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Pemesanan Online</h3>
+                    <p>Pesan produk favorit Anda kapan saja dan dimana saja melalui platform kami</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Customer support</h3>
+                    <p>Membantu pengguna jika ada pertanyaan, komplain, kebutuhan bantuan order/pembayaran/pengiriman</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌟 Produk Berkualitas</h3>
+                    <p>Semua produk telah melewati kurasi untuk menjamin kualitas terbaik</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutorial">
+            <h2>Cara Pemesanan</h2>
+
+            <div class="tutor-container">
+                <h3>1.</h3>
+                <div class="txt-tutor">Setelah masuk pada halaman <span>"Home"</span>, klik <span>"Toko"</span> pada navigasi bar (pojok kiri atas)</div>
+            </div>
+            <div class="tutor-container">
+                <h3>2.</h3>
+                <div class="txt-tutor">Setelah masuk pada halaman <span>"Toko"</span>, silahkan klik produk UMKM yang ingin anda beli</div>
+            </div>
+            <div class="tutor-container">
+                <h3>3.</h3>
+                <div class="txt-tutor">Tambahkan produk yang ingin dibeli dengan menekan tombol <span>"Order"</span>, maka pesanan anda akan masuk pada menu <span>"Pesanan"</span></div>
+            </div>
+            <div class="tutor-container">
+                <h3>4.</h3>
+                <div class="txt-tutor">Jika sudah selesai memilih produk, klik <span>"Pesanan"</span> pada navigasi bar (pojok kiri atas). Cek produk yang ingin dibeli sudah benar atau belum</div>
+            </div>
+            <div class="tutor-container">
+                <h3>5.</h3>
+                <div class="txt-tutor">jika produk sudah benar, Silahkan tekan tombol <span>"Checkout & Hubungi Admin"</span> maka anda akan di arahkan menuju <span>Whatsapp</span> untuk mengisi nama penerima dan alamat anda</div>
+            </div>
+            <div class="tutor-container">
+                <h3>6.</h3>
+                <div class="txt-tutor">Lakukan pembayaran yang tersedia dan tunggu pesanan anda datang</div>
+            </div>
+            <div class="tutor-container">
+                <h3>7.</h3>
+                <div class="txt-tutor">Jika terdapat kendala dalam melakukan otder, silahkan hubungi admin pada menu <span>"Kontak"</span></div>
+            </div>
+        </section>
     </div>
 
     <!-- Store Page -->
     <div class="store-page" id="storePage">
-      <h1>Toko UMKM Lokal</h1>
-      <div class="stores-grid">
-        <div class="store-card" onclick="showStoreDetail('bubur-bandung-mah-nci')">
-          <div class="store-logo">🍲</div>
-          <div class="store-info">
-            <h3>Bubur Bandung Mah Nci</h3>
-            <p>Makanan</p>
-          </div>
+        <h1>Toko UMKM Lokal</h1>
+        <div class="stores-grid">
+            <div class="store-card" onclick="showStoreDetail('bubur-bandung-mah-nci')">
+                <div class="store-logo">🍲</div>
+                <div class="store-info">
+                    <h3>Bubur Bandung Mah Nci</h3>
+                    <p>Makanan</p>
+                </div>
+            </div>
+            <div class="store-card" onclick="showStoreDetail('cfc')">
+                <div class="store-logo">🍗</div>
+                <div class="store-info">
+                    <h3>CFC (Chicken Farhan Conggeang)</h3>
+                    <p>Makanan</p>
+                </div>
+            </div>
+            <div class="store-card" onclick="showStoreDetail('martabak-telur-alun-alun')">
+                <div class="store-logo">🧇</div>
+                <div class="store-info">
+                    <h3>Martabak Telur Alun Alun</h3>
+                    <p>Makanan</p>
+                </div>
+            </div>
+            <div class="store-card" onclick="showStoreDetail('gurih-gurih-nyoyyy')">
+                <div class="store-logo">🍚🥤</div>
+                <div class="store-info">
+                    <h3>Gurih Gurih Nyoyyy</h3>
+                    <p>Makanan & Minuman</p>
+                </div>
+            </div>
+            <div class="store-card" onclick="showStoreDetail('warung-teh-elin')">
+                <div class="store-logo">🍛</div>
+                <div class="store-info">
+                    <h3>Warung Nasi Teh Elin</h3>
+                    <p>Makanan</p>
+                </div>
+            </div>
+            <div class="store-card" onclick="showStoreDetail('pawon-bu-mey')">
+                <div class="store-logo">🍢</div>
+                <div class="store-info">
+                    <h3>Pawon Bu Mey</h3>
+                    <p>Makanan</p>
+                </div>
+            </div>
         </div>
-        <div class="store-card" onclick="showStoreDetail('cfc')">
-          <div class="store-logo">🍗</div>
-          <div class="store-info">
-            <h3>CFC (Chicken Farhan Conggeang)</h3>
-            <p>Makanan</p>
-          </div>
-        </div>
-        <div class="store-card" onclick="showStoreDetail('martabak-telur-alun-alun')">
-          <div class="store-logo">🧇</div>
-          <div class="store-info">
-            <h3>Martabak Telur Alun Alun</h3>
-            <p>Makanan</p>
-          </div>
-        </div>
-        <div class="store-card" onclick="showStoreDetail('gurih-gurih-nyoyyy')">
-          <div class="store-logo">🍚🥤</div>
-          <div class="store-info">
-            <h3>Gurih Gurih Nyoyyy</h3>
-            <p>Makanan & Minuman</p>
-          </div>
-        </div>
-        <div class="store-card" onclick="showStoreDetail('warung-teh-elin')">
-          <div class="store-logo">🍛</div>
-          <div class="store-info">
-            <h3>Warung Nasi Teh Elin</h3>
-            <p>Makanan</p>
-          </div>
-        </div>
-        <div class="store-card" onclick="showStoreDetail('pawon-bu-mey')">
-          <div class="store-logo">🍢</div>
-          <div class="store-info">
-            <h3>Pawon Bu Mey</h3>
-            <p>Makanan</p>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Store Detail -->
     <div class="store-detail" id="storeDetail">
-      <div class="detail-container">
-        <button class="back-btn" onclick="showPage('store')">← Kembali</button>
-        <div class="store-header">
-          <div class="store-logo-large" id="detailLogo">🍲</div>
-          <div class="store-desc">
-            <h2 id="detailName">Nama Toko</h2>
-            <p id="detailDesc">Deskripsi toko</p>
-          </div>
+        <div class="detail-container">
+            <button class="back-btn" onclick="showPage('store')">← Kembali</button>
+            <div class="store-header">
+                <div class="store-logo-large" id="detailLogo">🍲</div>
+                <div class="store-desc">
+                    <h2 id="detailName">Nama Toko</h2>
+                    <p id="detailDesc">Deskripsi toko</p>
+                </div>
+            </div>
+            <div class="menu-section">
+                <h3>Menu Tersedia</h3>
+                <div class="menu-grid" id="menuGrid"></div>
+            </div>
         </div>
-        <div class="menu-section">
-          <h3>Menu Tersedia</h3>
-          <div class="menu-grid" id="menuGrid"></div>
-        </div>
-      </div>
     </div>
 
     <!-- Contact Page -->
     <div class="contact-page" id="contactPage">
-      <div class="contact-container">
-        <h1>Hubungi Admin</h1>
-        <div class="contact-info">
-          <div class="contact-item">
-            <h3>📱 WhatsApp</h3>
-            <p>
-              +62 851-7982-9793 |
-              <a href="https://wa.me/6285179829793">(Klik Disini)</a>
-            </p>
-          </div>
-          <div class="contact-item">
-            <h3>📧 Email</h3>
-            <p>nabilaputriiisma@gmail.com</p>
-          </div>
-          <div class="contact-item">
-            <h3>📍 Alamat</h3>
-            <p>Desa Conggeang Wetan, Kecamatan Conggeang,<br />Kabupaten Sumedang, Jawa barat, Indonesia</p>
-          </div>
-          <div class="contact-item">
-            <h3>⏰ Jam Operasional</h3>
-            <p>Setiap Hari: 06.00-11.30 & 12.00-20.00 WIB</p>
-          </div>
+        <div class="contact-container">
+            <h1>Hubungi Admin</h1>
+            <div class="contact-info">
+            <div class="contact-item">
+                <h3>📱 WhatsApp</h3>
+                <p>
+                +62 851-7982-9793 |
+                <a href="https://wa.me/6285179829793">(Klik Disini)</a>
+                </p>
+            </div>
+            <div class="contact-item">
+                <h3>📧 Email</h3>
+                <p>nabilaputriiisma@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <h3>📍 Alamat</h3>
+                <p>Desa Conggeang Wetan, Kecamatan Conggeang,<br />Kabupaten Sumedang, Jawa barat, Indonesia</p>
+            </div>
+            <div class="contact-item">
+                <h3>⏰ Jam Operasional</h3>
+                <p>Setiap Hari: 06.00-11.30 & 12.00-20.00 WIB</p>
+            </div>
+            </div>
         </div>
-      </div>
     </div>
-
     <!-- Cart/Pesanan Page -->
     <div class="cart-page" id="cartPage">
-      <div class="cart-container">
-        <h1>🛒 Keranjang Pesanan</h1>
-        <div id="cartEmpty" class="cart-empty">
-          <div class="empty-icon">🛍️</div>
-          <p>Keranjang Anda masih kosong</p>
-          <button class="btn-primary" onclick="showPage('store')">Mulai Belanja</button>
+        <div class="cart-container">
+            <h1>🛒 Keranjang Pesanan</h1>
+            <div id="cartEmpty" class="cart-empty">
+                <div class="empty-icon">🛍️</div>
+                <p>Keranjang Anda masih kosong</p>
+                <button class="btn-primary" onclick="showPage('store')">Mulai Belanja</button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div id="cartSummary" class="cart-summary" style="display: none;">
+                <div class="summary-row">
+                    <span>Total Item:</span>
+                    <span id="totalItems">0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Harga:</span>
+                    <span id="totalPrice">Rp 0</span>
+                </div>
+                <button class="btn-checkout" onclick="checkout()">Checkout & Hubungi Admin</button>
+                <button class="btn-clear" onclick="clearCart()">Kosongkan Keranjang</button>
+            </div>
         </div>
-        <div id="cartItems" class="cart-items"></div>
-        <div id="cartSummary" class="cart-summary" style="display: none">
-          <div class="summary-row">
-            <span>Total Item:</span>
-            <span id="totalItems">0</span>
-          </div>
-          <div class="summary-row total">
-            <span>Total Harga:</span>
-            <span id="totalPrice">Rp 0</span>
-          </div>
-          <button class="btn-checkout" onclick="checkout()">Checkout & Hubungi Admin</button>
-          <button class="btn-clear" onclick="clearCart()">Kosongkan Keranjang</button>
-        </div>
-      </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
