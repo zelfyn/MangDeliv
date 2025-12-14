@@ -175,6 +175,7 @@ nav {
 .hero {
     height: 100vh;
     background-image: url(pics/bg-home.jpg);
+    object-fit: cover;
     display: flex;
     align-items: center;
     position: relative;
