@@ -833,6 +833,9 @@ nav {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        object-fit: cover;
+    }
     .nav-links {
         gap: 1rem;
     }
